@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "less": "^3.11.1",
-    "less-loader": "^5.0.0",
     "@babel/core": "7.12.3",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
     "@svgr/webpack": "5.5.0",
@@ -25,11 +23,13 @@
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
     "eslint": "^7.11.0",
+    "eslint-config-prettier": "6.10.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-flowtype": "^5.2.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^24.1.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^3.9.2",
@@ -42,6 +42,8 @@
     "jest-circus": "26.6.0",
     "jest-resolve": "26.6.0",
     "jest-watch-typeahead": "0.6.1",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "0.11.3",
     "optimize-css-assets-webpack-plugin": "5.0.4",
     "pnp-webpack-plugin": "1.6.4",
@@ -50,6 +52,7 @@
     "postcss-normalize": "8.0.1",
     "postcss-preset-env": "6.7.0",
     "postcss-safe-parser": "5.0.2",
+    "prettier": "2.0.1",
     "prompts": "2.4.0",
     "react": "^17.0.2",
     "react-app-polyfill": "^2.0.0",
@@ -78,7 +81,7 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "plugin:prettier/recommended"
     ]
   },
   "browserslist": {
@@ -123,7 +126,7 @@
     "modulePaths": [],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
-      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+      "^.+\\.module\\.(css|sass|scss)$": "ideentity-obj-proxy"
     },
     "moduleFileExtensions": [
       "web.js",
