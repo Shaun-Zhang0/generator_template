@@ -5,20 +5,19 @@ import routerConfigs from './route-config';
 export default class AppRouter extends PureComponent {
   render() {
     return (
-      <Suspense fallback={<div>loading...</div>}>
+      <Suspense fallback={null}>
         <Router>
           <Routes>
             {Object.keys(routerConfigs).map((key) => {
+              const RouteElement = routerConfigs[key].renderComponent;
               return (
                 <Route
                   key={key}
                   path={routerConfigs[key].path}
-                  element={routerConfigs[key].renderComponent()}
+                  element={<RouteElement />}
                 />
               );
             })}
-            {/*<Route path={routerConfigs.MAIN.path} element={<Main />} />*/}
-            {/*<Route path={routerConfigs.TEST.path} element={<Test />} />*/}
           </Routes>
         </Router>
       </Suspense>

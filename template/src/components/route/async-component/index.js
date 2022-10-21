@@ -8,16 +8,19 @@ const asyncComponent = (importComponent) => {
         component: null,
       };
     }
-    componentDidMount() {
-      importComponent().then((cmp) => {
-        this.setState({ component: cmp.default });
+
+    //或者使用async/await 写成
+    async componentDidMount() {
+      const { default: component } = await importComponent();
+      this.setState({
+        component: component,
       });
     }
+
     render() {
       const C = this.state.component;
       return C ? <C {...this.props} /> : null;
     }
   };
 };
-
 export default asyncComponent;

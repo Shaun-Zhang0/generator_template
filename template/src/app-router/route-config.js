@@ -3,7 +3,7 @@ import asyncComponent from '../components/route/async-component';
 const routerConfigs = {
   MAIN: {
     path: '/',
-    renderComponent: () => asyncComponent(() => import('../pages/main')),
+    renderComponent: asyncComponent(() => import('../pages/main')),
   },
   TEST: {
     path: '/test',
