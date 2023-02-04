@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 const asyncComponent = (importComponent) => {
   return class extends Component {
-    constructor() {
-      super();
+    constructor(props) {
+      super(props);
       this.state = {
         component: null,
       };
